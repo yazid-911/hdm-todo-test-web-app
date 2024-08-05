@@ -3,6 +3,9 @@ export default function useFetch() {
     try {
       const myHeaders = new Headers();
 
+      myHeaders.set('Accept', 'application/json');
+      myHeaders.set('Content-Type', 'application/json');
+
       const requestOptions = {
         method,
         headers: myHeaders,

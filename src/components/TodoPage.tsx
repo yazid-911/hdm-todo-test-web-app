@@ -1,6 +1,5 @@
 /**
- * @todo YOU HAVE TO IMPLEMENT THE SAVE TASK ENDPOINT, A TASK CANNOT BE UPDATED IF THE TASK NAME DID NOT CHANGE, YOU'VE TO CONTROL THE BUTTON STATE ACCORDINGLY
- * @todo THERE ARE ALSO FEW BUGS, FIX THEM
+ * @todo YOU HAVE TO IMPLEMENT THE DELETE AND SAVE TASK ENDPOINT, A TASK CANNOT BE UPDATED IF THE TASK NAME DID NOT CHANGE, YOU'VE TO CONTROL THE BUTTON STATE ACCORDINGLY
  */
 import { Check, Delete } from '@mui/icons-material';
 import { Box, Button, Container, IconButton, TextField, Typography } from '@mui/material';
@@ -15,12 +14,11 @@ const TodoPage = () => {
   const handleFetchTasks = async () => setTasks(await api.get('/tasks'));
 
   const handleDelete = async (id: number) => {
-    await api.delete(`/tasks/${id}`);
-    handleFetchTasks();
+    // @todo IMPLEMENT HERE : DELETE THE TASK & REFRESH ALL THE TASKS, DON'T FORGET TO ATTACH THE FUNCTION TO THE APPROPRIATE BUTTON
   }
 
   const handleSave = async () => {
-    // @todo IMPLEMENT HERE : SAVE THE TASK & REFRESH ALL THE TASKS
+    // @todo IMPLEMENT HERE : SAVE THE TASK & REFRESH ALL THE TASKS, DON'T FORGET TO ATTACH THE FUNCTION TO THE APPROPRIATE BUTTON
   }
 
   useEffect(() => {
@@ -44,15 +42,16 @@ const TodoPage = () => {
                 <IconButton color="success" disabled>
                   <Check />
                 </IconButton>
-                <IconButton color="error">
+                <IconButton color="error" onClick={() => {}}>
                   <Delete />
                 </IconButton>
               </Box>
             </Box>
           ))
         }
+
         <Box display="flex" justifyContent="center" alignItems="center" mt={2}>
-          <Button variant="outlined">Ajouter une tâche</Button>
+          <Button variant="outlined" onClick={() => {}}>Ajouter une tâche</Button>
         </Box>
       </Box>
     </Container>
